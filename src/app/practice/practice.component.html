@@ -1,0 +1,33 @@
+<!-- <label>Username:</label>
+<input type="text" class="form-control" [(ngModel)]="username">
+<p>Username is : {{username}}</p>
+<button class="btn btn-primary" (click)="resetUsername()" [disabled]="username===''">Reset Username</button>
+
+<p>.....................................................................................................................................</p>
+
+
+<button class="btn btn-primary" (click)="handleClick()">Display Details</button>
+<p *ngIf="flag">Hi this is Abhishek Mishra</p>
+
+<div 
+    *ngFor="let log of logArray" 
+    [ngStyle] = "{backgroundColor: log >= 5 ? 'blue' : 'transparent' }"
+    [ngClass] = "{'white-text' : log >= 5}"
+>
+  <p >{{log}}</p> -->
+  <div>select the sorting option from dropdown: </div>
+ <select class="form-control" [(ngModel)]="sortType" >
+  <!-- diabled makes it unable to select -->
+  <!-- selected attribut shows the text inside te options tag  -->
+  <!-- whenever user select the dropdown the hidden attribute makes this option hidden -->
+    <option value="" disabled selected hidden>Choose your option</option>
+    <option value="name">Name</option>
+    <option value="rollNo">Roll No</option>
+  </select>
+  <div *ngFor="let emp of sortThisArray | sort: sortType">
+      {{emp.name}} {{emp.rollNo}}
+  </div>
+  <div>{{testStringWithNot}} and {{simpleTestString}}</div>
+
+
+<!-- </div>    -->
