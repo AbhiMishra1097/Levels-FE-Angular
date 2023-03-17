@@ -9,6 +9,8 @@ import { Login } from './login';
 })
 export class LoginUserService {
 
+  private isLoggedIn = false;
+
   constructor(private http: HttpClient) { }
 
   loginUser(login : Login):Observable<any>{
@@ -16,8 +18,17 @@ export class LoginUserService {
     const options = new HttpHeaders({'Content-Type':'application/json'});
 
     return this.http.post('http://localhost:8080/Levels/login', login, {headers: options} ).pipe(
-      tap((data:any)=> console.log("data received from login service from springboot: ",data)),
+      tap((data:any)=> {
+        //or directly we can assign isLoggedIn to true
+        if(data.jwt != null){
+          this.isLoggedIn = true;
+        }
+      }),
       catchError(this.handleError));
+  }
+
+  isUserLoggedIn(): boolean{
+    return this.isLoggedIn;
   }
 
   handleError(err: HttpErrorResponse): Observable<any>{

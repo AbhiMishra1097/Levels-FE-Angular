@@ -11,6 +11,7 @@ import { PracticeComponent } from './practice/practice.component';
 import { LoginUserService } from './login/login-user.service';
 import { SortPipe } from './sort.pipe';
 import { HomepageComponent } from './homepage/homepage.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HomepageComponent } from './homepage/homepage.component';
     LoginComponent,
     PracticeComponent,
     SortPipe,
-    HomepageComponent
+    HomepageComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
