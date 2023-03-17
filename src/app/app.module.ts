@@ -8,8 +8,9 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { PracticeComponent } from './practice/practice.component';
-import { LoginUserService } from './services/login-user.service';
+import { LoginUserService } from './login/login-user.service';
 import { SortPipe } from './sort.pipe';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SortPipe } from './sort.pipe';
     HeaderComponent,
     LoginComponent,
     PracticeComponent,
-    SortPipe
+    SortPipe,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
